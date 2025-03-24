@@ -55,4 +55,8 @@ sys     0m0.203s
 ```
 
 I don't think it's cheating but I also recognize that a logical extension of that is compiling
-the program into `#define`'s which probably would yield more of a speedup.
+the program into `#define`'s which probably would yield more of a speedup. If one wanted to make
+my solution more dynamic, I would recommend building a `.vm` to ptx compiler and letting ptxas
+do its thing, then manually do the `cudaLaunchKernel()` dance and ship the ptx to the GPU dynamically.
+
+This is a cute trick we do in [SCUDA](https://github.com/kevmo314/scuda).
