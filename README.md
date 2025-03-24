@@ -2,7 +2,7 @@
 
 My submission for [Matt Keeter's Prospero challenge](https://www.mattkeeter.com/projects/prospero/).
 
-Runs in 500us/frame for 4096x4096 on an RTX 4090. That's correct, that's sub 1ms per frame.
+Runs in 500us/frame for 4096x4096 on an RTX 4090. That's sub 1ms per frame.
 
 ![prospero](output.png)
 
@@ -13,8 +13,9 @@ Matt's post mentions
 When building my solution, I am reminded of something I tell myself often: there are thousands of people
 much smarter than me who have invested more time than me to solve problems more difficult than mine.
 
-Therefore, I took the "bitter lesson" approach and converted the `.vm` file to CUDA code which I then compile.
-This results in a nice 100-line solution without needing to invent anything particularly novel.
+Therefore, I took the ["bitter lesson" approach](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)
+and converted the `.vm` file to CUDA code which I then compile. This results in a nice 100-line solution
+without needing to invent anything particularly novel.
 
 ## Usage
 
