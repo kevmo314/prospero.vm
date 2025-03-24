@@ -17,6 +17,18 @@ Therefore, I took the ["bitter lesson" approach](http://www.incompleteideas.net/
 and converted the `.vm` file to CUDA code which I then compile. This results in a nice 100-line solution
 without needing to invent anything particularly novel.
 
+To give myself _a little_ credit, I believed this was possible from the outset because I roughly estimated
+the number of required operations as about `4096 * 4096 + 7000` because there are 4096x4096 pixels and because
+of SIMT, we can reduce the operation count to once per image (ok not quite but you get the idea).
+
+Back in college, I did competitive programming and we would say a given CPU thread can do ~100M op/sec roughly (a
+nice extension of the [latency numbers you should know post](https://norvig.com/21-days.html#answers)).
+That was ten years ago, so due to Moore's law, we can multiply that by a factor of 100 ish, so roughly 10B op/sec
+these days. That's not quite true, Moore's law hasn't kept up quite that much, but as a rough ballpark it works.
+
+That implies that each frame can probably be rendered in ~1ms if we're smart about it, so I thought I could
+beat the numbers advertised in the original challenge.
+
 ## Usage
 
 Run the codegen with:
